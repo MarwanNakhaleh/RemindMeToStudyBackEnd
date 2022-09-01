@@ -1,0 +1,37 @@
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+
+# Mac
+.DS_Store
+
+# packages
+certifi/
+certifi-2022.6.15.dist-info
+charset_normalizer
+charset_normalizer-2.1.1.dist-info
+idna
+idna-3.3.dist-info
+jwt/
+PyJWT-2.4.0.dist-info
+pytz
+pytz-2022.2.1.dist-info
+requests
+requests-2.28.1.dist-info
+twilio
+twilio-7.13.0.dist-info
+urllib3
+urllib3-1.26.12.dist-info
+
+# AWS
+.aws-sam
+out.yaml
