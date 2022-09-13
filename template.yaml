@@ -22,7 +22,7 @@ Resources:
         - "application/json"
       Cors:
         AllowMethods: "'POST'"
-        AllowHeaders: "'X-Forwarded-For'"
+        AllowHeaders: "'X-Forwarded-For,'Content-Type'"
         AllowOrigin: "'*'" # TODO: lock this down
         MaxAge: "'600'"
         AllowCredentials: False
@@ -94,7 +94,7 @@ Resources:
           ]
         ]
   
-  ApiDeployment202103212022:
+  ApiDeployment202103212021:
     DependsOn: StudyReminderPOSTMethod
     Type: AWS::ApiGateway::Deployment
     Properties: 

@@ -14,7 +14,8 @@ def lambda_handler(event, context):
     account_sid = os.environ['TWILIO_ACCOUNT_SID']
     auth_token = os.environ['TWILIO_AUTH_TOKEN']
     client = Client(account_sid, auth_token)
-
+    logging.info(event)
+    
     try:
         event_body = json.loads(b64decode(event["body"]))
         logging.info(event_body)
@@ -27,8 +28,10 @@ def lambda_handler(event, context):
                     )
         return {
             "headers": {
-                "Access-Control-Allow-Origin": "https://d30oxzp0dgco37.cloudfront.net",
-                'Access-Control-Allow-Methods': 'POST'
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "*",
+                "Access-Control-Allow-Credentials": True,
+                "Content-Type": "application/json"
             },
             "statusCode": 200,
             "body": message.sid
@@ -38,8 +41,10 @@ def lambda_handler(event, context):
         logging.error(str(e))
         return {
             "headers": {
-                "Access-Control-Allow-Origin": "https://d30oxzp0dgco37.cloudfront.net",
-                'Access-Control-Allow-Methods': 'POST'
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "*",
+                "Access-Control-Allow-Credentials": True,
+                "Content-Type": "application/json"
             },
             "statusCode": 500,
             "body": str(e)
